@@ -7,6 +7,6 @@ composer create-project --no-dev oxid-esales/oxideshop-project your_project_name
 
 In der Bash "apache2ctl start"
 
-MySQL-DB: docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+MySQL-DB: docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
 
 Now you can connect to the database using host “localhost” and Port 3306 (root:password)
