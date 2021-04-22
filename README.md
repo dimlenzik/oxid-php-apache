@@ -1,21 +1,12 @@
-Extended PHP base container
-===========================
-
-Based on the images provided at https://hub.docker.com/_/php.
-
-Changes contain:
-- Installing necessary PHP-extensions
-- Use of msmtp for sendmail
-- Removing memory limits on PHP
-- Installing Xdebug and provide an option to enable it
-- Installing Composer
-
-To build locally use ./build.sh [Major].[Minor] a.e. `./build.sh 7.1`
-
-Danach aus dem Oxid-Base-Verzeichnis:
+git clone https://github.com/dimlen/oxid-php-apache.git
+cd oxid-php-apache
+./build.sh 7.4
+cd Oxid-Verzeichnis
 docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 bash
+composer create-project --no-dev oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce
 
 In der Bash "apache2ctl start"
 
-MySQL:
-docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+MySQL-DB: docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+
+Now you can connect to the database using host “localhost” and Port 3306 (root:password)
