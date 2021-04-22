@@ -10,8 +10,6 @@
 
 `docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 bash`
 
-`composer create-project --no-dev oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce`
-
 `apache2ctl start`
 
 Now you can browse to http://localhost:8080/Setup
