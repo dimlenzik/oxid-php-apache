@@ -1,12 +1,31 @@
-git clone https://github.com/dimlen/oxid-php-apache.git
-cd oxid-php-apache
-./build.sh 7.4
-cd Oxid-Verzeichnis
-docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 bash
-composer create-project --no-dev oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce
+`git clone https://github.com/dimlen/oxid-php-apache.git`
 
-In der Bash "apache2ctl start"
+`cd oxid-php-apache`
 
-MySQL-DB: docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
+`./build.sh 7.4`
 
-Now you can connect to the database using host “localhost” and Port 3306 (root:password)
+`cd Oxid-Verzeichnis`
+
+`docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 bash`
+
+`composer create-project --no-dev oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce`
+
+`apache2ctl start`
+
+Now you can browse to http://localhost:8080/Setup
+
+**Troubleshooting:**
+
+_DB not reachable on Oxid-Setup:_
+
+Find out the ip address of the container:
+
+`docker inspect oxid_coding_days_mysql`
+
+use the IP instead of the container name
+
+**MySQL-DB:** 
+
+`docker run --rm -ti --name oxid_coding_days_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7`
+
+Now you can locally connect to the database using host “localhost” and Port 3306 (root:password)
