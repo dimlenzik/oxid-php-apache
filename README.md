@@ -4,7 +4,7 @@
 
 `./build.sh 7.4`
 
-`docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 composer create-project --no-dev oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce`
+`docker run --rm -ti -v "${PWD}:/var/www/html/shop:cached" -p 8080:80 oxidesales/oxideshop-docker-php:7.4 composer create-project oxid-esales/oxideshop-project your_project_name dev-b-6.3-ce`
 
 `cd Oxid-Verzeichnis`
 
